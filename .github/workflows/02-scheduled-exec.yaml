@@ -1,14 +1,14 @@
 # CI de Nível 02 - Disparo agendado
 
 # Nome do nosso 'pipeline'
-name: 'Execução Manual'
+name: 'Execução Agendada (Scheduled)'
 
 # Regras de disparo (triggers)
 # Gatilho de execução manual = workflow_dispatch
 
 on:
   schedule:
-    - cron: '35 20 * * 6'
+    - cron: '45 20 * * 6'
 
 # Trabalhos/tarefas dentro do pipeline = jobs
 jobs:
