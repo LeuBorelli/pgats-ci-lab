@@ -45,18 +45,18 @@ pipeline {
 
         // Etapa 5: Roda os Testes
         stage('Run E2E Tests') {
-    steps {
-        echo 'Executando os testes E2E...'
-        // Envelopa o powershell com ansiColor
-        ansiColor('xterm') {
-            // Usamos 'script' para garantir que o powershell rode dentro do contexto
-            script {
-                try {
-                    powershell 'yarn run e2e'
-                } catch (err) {
-                    // Marca o build como falho se o powershell retornar erro
-                    currentBuild.result = 'FAILURE'
-                    throw err
+          steps {
+            echo 'Executando os testes E2E...'
+            // Envelopa o powershell com ansiColor
+            ansiColor('xterm') {
+                // Usamos 'script' para garantir que o powershell rode dentro do contexto
+                script {
+                    try {
+                        powershell 'yarn run e2e'
+                    } catch (err) {
+                        // Marca o build como falho se o powershell retornar erro
+                        currentBuild.result = 'FAILURE'
+                        throw err
                 }
             }
         }
