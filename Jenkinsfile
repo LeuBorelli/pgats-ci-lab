@@ -65,7 +65,22 @@ pipeline {
         } // 12. Fecha stage
     }
     post {
-        always {
+        always { // Executa sempre
+            echo 'Publicando relatório HTML e arquivando artefatos...'
+
+            // Publica o relatório HTML do Playwright
+            publishHTML(target: [
+                allowMissing: true,          // Não falha se o relatório não existir
+                alwaysLinkToLastBuild: true, // Sempre mostra link, mesmo se falhar
+                keepAll: true,               // Mantém relatórios de builds anteriores
+                reportDir: 'playwright-report', // A pasta onde o Playwright salva o relatório
+                reportFiles: 'index.html',     // O arquivo principal do relatório
+                reportName: 'Relatório Playwright HTML' // Nome que aparecerá no Jenkins
+            ])
+
+            // Arquiva screenshots/traces (opcional, mas recomendado)
+            archiveArtifacts artifacts: 'test-results/**', allowEmptyArchive: true
+
             echo 'Pipeline finalizado.'
         }
     }
