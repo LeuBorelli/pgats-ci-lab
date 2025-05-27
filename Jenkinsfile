@@ -23,7 +23,7 @@ pipeline {
         stage('Install Yarn') {
             steps {
                 echo 'Instalando Yarn...'
-                bat 'npm install -g yarn' // <- Mesmo comando do 'run:'
+                powershell 'npm install -g yarn' // <- Mesmo comando do 'run:'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Instalando dependências...'
-                bat 'yarn install' // <- Mesmo comando 'yarn', mas 'yarn install' é mais explícito
+                powershell 'yarn install' // <- Mesmo comando 'yarn', mas 'yarn install' é mais explícito
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
         stage('Install Playwright') {
             steps {
                 echo 'Instalando Playwright...'
-                bat 'yarn playwright install' // <- Mesmo comando do 'run:'
+                powershell 'yarn playwright install' // <- Mesmo comando do 'run:'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
         stage('Run E2E Tests') {
             steps {
                 echo 'Executando os testes E2E...'
-                bat 'yarn run e2e' // <- Mesmo comando do 'run:'
+                powershell 'yarn run e2e' // <- Mesmo comando do 'run:'
             }
         }
     }
