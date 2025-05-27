@@ -63,7 +63,7 @@ pipeline {
                 } // 10. Fecha ansiColor
             } // 11. Fecha steps
         } // 12. Fecha stage
-
+    }
     post {
         always {
             echo 'Pipeline finalizado.'
