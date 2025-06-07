@@ -50,3 +50,9 @@ jobs:
       # Executar os testes e2e
       - name: Executando Testes E2E
         run: yarn run e2e
+
+      - uses: actions/upload-artiafact@v4
+        if: ${{ !cancelled() }} 
+        with:
+          name: Relatorio
+          path: .playwright-report
