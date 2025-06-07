@@ -19,6 +19,12 @@ jobs:
     # Definir em qual máquina o job vai executar
     runs-on: ubuntu-22.04
 
+    # Condicional - if
+    # `${ expressao }`
+    # == comparação
+
+    if: ${{ github.event.worfflow_run.conclusion  == 'success' }} 
+
     # Passos do script de build são chamados de steps
     steps:
       # Clone do projeto
