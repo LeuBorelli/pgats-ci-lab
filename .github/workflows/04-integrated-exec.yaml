@@ -23,6 +23,7 @@ jobs:
 
   unidade:
     runs-on: ubuntu-22.04
+    needs: [inspecao]
 
     steps:
       - uses: actions/checkout@v4
@@ -72,6 +73,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-22.04
+    needs: [e2e-tests]
 
     steps:
       - name: Deploy Simulation
