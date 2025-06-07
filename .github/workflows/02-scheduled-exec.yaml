@@ -13,7 +13,6 @@ on:
 # Trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   e2e-tests:
-
     # Definir em qual máquina o job vai executar
     runs-on: ubuntu-22.04
 
@@ -42,4 +41,3 @@ jobs:
       # Executar os testes e2e
       - name: Executando Testes E2E
         run: yarn run e2e
-

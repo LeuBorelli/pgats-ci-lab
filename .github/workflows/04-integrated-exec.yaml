@@ -1,6 +1,6 @@
 # CI de Nível 04 - Disparo de testes dentro do pipe do dev
 
-name: 'Execucao integrada'
+name: 'Execucao Integrada'
 
 on:
   workflow_dispatch:
