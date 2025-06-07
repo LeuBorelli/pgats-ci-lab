@@ -4,7 +4,7 @@ name: 'Execucao Integrada'
 
 on:
   workflow_dispatch:
-    
+
 jobs:
   inspecao:
     runs-on: ubuntu-22.04
@@ -65,7 +65,7 @@ jobs:
         run: yarn run e2e
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }} 
+        if: ${{ !cancelled() }}
         with:
           name: Relatorio
           path: ./playwright-report
