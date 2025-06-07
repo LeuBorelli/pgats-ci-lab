@@ -39,6 +39,7 @@ jobs:
 
   e2e-tests:
     runs-on: ubuntu-22.04
+    needs: [inspecao]
 
     steps:
       # Clone do projeto
