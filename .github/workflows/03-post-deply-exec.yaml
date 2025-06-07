@@ -23,7 +23,7 @@ jobs:
     # `${ expressao }`
     # == comparação
 
-    if: ${{ github.event.worfflow_run.conclusion  == 'success' }} 
+    if: ${{ github.event.workflow_run.conclusion  == 'success' }} 
 
     # Passos do script de build são chamados de steps
     steps:
@@ -51,7 +51,7 @@ jobs:
       - name: Executando Testes E2E
         run: yarn run e2e
 
-      - uses: actions/upload-artiafact@v4
+      - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }} 
         with:
           name: Relatorio
